@@ -1,7 +1,7 @@
 canvas = document.getElementById('myCanvas');
 ctx = canvas.getContext("2d");
-nasa_mars_images_array = ["1.jfif","2.jfif","3.jfif","4.jfif"];
-randomnum = Math.floor(Math.random()*4);
+nasa_mars_images_array = ["1.jfif","2.jfif","3.jfif","4.jfif","mars.jpg"];
+randomnum = Math.floor(Math.random()*5);
 console.log(randomnum);
 roverwidth = 100;
 roverheight = 90;
@@ -18,10 +18,10 @@ function uploadrover() {
 function add() {
     bgimg = new Image();
     bgimg.onload=uploadBackground;
-    bgimg.source=bg;
+    bgimg.src=bg;
     roimg = new Image();
     roimg.onload=uploadrover;
-    roimg.source=rover;
+    roimg.src=rover;
 }
 window.addEventListener("keydown",my_keydown);
 function my_keydown(e) {
@@ -69,7 +69,7 @@ function left() {
     }
 }
 function right() {
-  if(rovery<=700){
+  if(roverx<=700){
        roverx = roverx + 10;
        console.log("when right is pressed - x ="+ roverx +" | y = "+ rovery);
        uploadBackground();
